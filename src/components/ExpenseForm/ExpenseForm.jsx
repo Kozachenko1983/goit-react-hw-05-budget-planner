@@ -44,6 +44,7 @@ class ExpenseForm extends Component {
             placeholder="name"
             value={name}
             onChange={this.handleChange}
+            required
           />
         </Label>
         <Label customStyles={labelStyles}>
@@ -54,6 +55,7 @@ class ExpenseForm extends Component {
             placeholder="0"
             value={amount}
             onChange={this.handleChange}
+            required
           />
         </Label>
 

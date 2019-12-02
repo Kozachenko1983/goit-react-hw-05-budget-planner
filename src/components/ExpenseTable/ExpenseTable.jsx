@@ -20,26 +20,30 @@ const Table = styled.table`
 `;
 
 const ExpensesTable = ({ items, deleteExpense }) => (
-  <Table>
-    <thead>
-      <tr>
-        <th>Expense name</th>
-        <th>Expense amount</th>
-        <th />
-      </tr>
-    </thead>
-    <tbody>
-      {items.map(({ id, name, amount }) => (
-        <tr key={id}>
-          <td>{name}</td>
-          <td>{amount}</td>
-          <td>
-            <Button label="Delete" onClick={() => deleteExpense(id)} />
-          </td>
-        </tr>
-      ))}
-    </tbody>
-  </Table>
+  <>
+    {!!items.length && (
+      <Table>
+        <thead>
+          <tr>
+            <th>Expense name</th>
+            <th>Expense amount</th>
+            <th />
+          </tr>
+        </thead>
+        <tbody>
+          {items.map(({ id, name, amount }) => (
+            <tr key={id}>
+              <td>{name}</td>
+              <td>{amount}</td>
+              <td>
+                <Button label="Delete" onClick={() => deleteExpense(id)} />
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
+    )}
+  </>
 );
 ExpensesTable.propTypes = {
   items: PropTypes.arrayOf(

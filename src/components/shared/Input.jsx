@@ -22,6 +22,8 @@ const Input = ({
   value = '',
   onChange = () => null,
   name = '',
+  required,
+
   placeholder = '',
 }) => (
   <StyledInput
@@ -30,6 +32,7 @@ const Input = ({
     value={value}
     onChange={onChange}
     name={name}
+    required={required}
   />
 );
 Input.defaultProps = {
@@ -37,6 +40,7 @@ Input.defaultProps = {
   value: '',
   name: '',
   onChange: () => null,
+  required: false,
 };
 
 Input.propTypes = {
@@ -45,6 +49,7 @@ Input.propTypes = {
   name: PropTypes.string,
   placeholder: PropTypes.string.isRequired,
   onChange: PropTypes.func,
+  required: PropTypes.bool,
 };
 
 export default Input;

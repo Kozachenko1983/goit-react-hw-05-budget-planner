@@ -17,7 +17,7 @@ const Values = ({ budget, totalExpenses, balance }) => (
   </Container>
 );
 Values.propTypes = {
-  budget: PropTypes.number.isRequired,
+  budget: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   totalExpenses: PropTypes.number.isRequired,
   balance: PropTypes.number.isRequired,
 };

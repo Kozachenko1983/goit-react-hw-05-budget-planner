@@ -33,7 +33,7 @@ Value.defaultProps = { isPositive: false };
 
 Value.propTypes = {
   label: PropTypes.string.isRequired,
-  value: PropTypes.number.isRequired,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   isPositive: PropTypes.bool,
 };
 
